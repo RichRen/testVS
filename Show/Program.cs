@@ -27,5 +27,10 @@ namespace Show
 
             Console.ReadKey();
         }
+
+        public static void TestAdd()
+        {
+
+        }
     }
 }

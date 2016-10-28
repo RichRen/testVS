@@ -17,11 +17,17 @@ namespace DbLibrary
         }
 
         public DbSet<ProductCatalog> ProductCatalogs { get; set; }
+        public DbSet<Customer> Customers { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             //modelBuilder.Entity<ProductCatalog>().Property(p => p.ProductCatalogId)
             //    .HasDatabaseGeneratedOption(DatabaseGeneratedOption.None);
+
+            modelBuilder.Entity<ProductCatalog>().ToTable("ProductCatalogs");
+
+            modelBuilder.Entity<Customer>().HasKey(c => c.IDCardNumber).Property(item => item.IDCardNumber).HasDatabaseGeneratedOption(DatabaseGeneratedOption.None);
+            modelBuilder.Entity<Customer>().Property(c => c.CustomerName).IsRequired().HasMaxLength(10);
 
         }
     }
