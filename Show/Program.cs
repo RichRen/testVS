@@ -11,27 +11,24 @@ namespace Show
     {
         static void Main(string[] args)
         {
-            var db = new OrderSystemContext();
+            OrderSystemContext db = new OrderSystemContext();
 
-            var catalogs = db.ProductCatalogs.Where(c => c.ProductCatalogId == 1).ToList();
-            var customs = db.Customers.ToList();
+            #region 1.查询测试
+            //var products = db.ProductCatalogs.ToList(); 
+            #endregion
 
-            ProductCatalog pc = new ProductCatalog();
-            pc.CatalogName = "CatalogName";
-            pc.ListPrice = 100;
-            pc.Manufactory = "Manufactory";
-            pc.NetPrice = 200;
+            #region 2.值对象测试
 
-            db.ProductCatalogs.Add(pc);
+            //Customer newCustomer = new Customer() { IDCardNumber = "120104198106072518", CustomerName = "Alex", Gender = "M", PhoneNumber = "test" };
+            //Address customerAddress = new Address { Country = "China", Province = "Tianjin", City = "Tianjin", StreetAddress = "Crown Plaza", ZipCode = "300308" };
 
-            int count = db.SaveChanges();
+            //newCustomer.Address = customerAddress;
+            //db.Customers.Add(newCustomer);
+
+            //db.SaveChanges(); 
+            #endregion
 
             Console.ReadKey();
-        }
-
-        public static void TestAdd()
-        {
-
         }
     }
 }
