@@ -11,9 +11,10 @@ namespace Show
     {
         static void Main(string[] args)
         {
-            var context = new OrderSystemContext();
+            var db = new OrderSystemContext();
 
-            var catalogs = context.ProductCatalogs.Where(c => c.ProductCatalogId == 1).ToList();
+            var catalogs = db.ProductCatalogs.Where(c => c.ProductCatalogId == 1).ToList();
+            var customs = db.Customers.ToList();
 
             ProductCatalog pc = new ProductCatalog();
             pc.CatalogName = "CatalogName";
@@ -21,9 +22,9 @@ namespace Show
             pc.Manufactory = "Manufactory";
             pc.NetPrice = 200;
 
-            context.ProductCatalogs.Add(pc);
+            db.ProductCatalogs.Add(pc);
 
-            int count = context.SaveChanges();
+            int count = db.SaveChanges();
 
             Console.ReadKey();
         }

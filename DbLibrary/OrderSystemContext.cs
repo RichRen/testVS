@@ -5,6 +5,7 @@ using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DbLibrary.Configurations;
 
 namespace DbLibrary
 {
@@ -13,7 +14,8 @@ namespace DbLibrary
         public OrderSystemContext()
             : base("name=OrderSystemContext")
         {
-            //Database.SetInitializer<OrderSystemContext>(null);
+            Database.SetInitializer<OrderSystemContext>(null);
+            //Database.SetInitializer<OrderSystemContext>(new DropCreateOrderDatabaseWithSeedValueAlways());
         }
 
         public DbSet<ProductCatalog> ProductCatalogs { get; set; }
@@ -21,14 +23,11 @@ namespace DbLibrary
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            //modelBuilder.Entity<ProductCatalog>().Property(p => p.ProductCatalogId)
-            //    .HasDatabaseGeneratedOption(DatabaseGeneratedOption.None);
+            modelBuilder.Configurations.Add(new ProductCatalogConfiguration());
+            modelBuilder.Configurations.Add(new CustomerEntityConfiguration());
 
-            modelBuilder.Entity<ProductCatalog>().ToTable("ProductCatalogs");
-
-            modelBuilder.Entity<Customer>().HasKey(c => c.IDCardNumber).Property(item => item.IDCardNumber).HasDatabaseGeneratedOption(DatabaseGeneratedOption.None);
-            modelBuilder.Entity<Customer>().Property(c => c.CustomerName).IsRequired().HasMaxLength(10);
-
-        }
+        }        
     }
+
+    
 }

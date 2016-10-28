@@ -49,6 +49,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BaseStrategy.cs" />
+    <Compile Include="Configurations\CustomerEntityConfiguration.cs" />
+    <Compile Include="Configurations\ProductCatalogConfiguration.cs" />
     <Compile Include="Customer.cs" />
     <Compile Include="OrderSystemContext.cs" />
     <Compile Include="ProductCatalog.cs" />
