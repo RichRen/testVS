@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Show", "Show\Show.csproj", "{8ACB14F4-313A-4B26-BC06-9CE86A345149}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1 Show", "1 Show", "{BD04D8F2-5987-4DF4-9117-F3193F12830D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DbLibrary", "DbLibrary\DbLibrary.csproj", "{02FFAD62-634D-4727-A1FC-73D589AC6B4D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2 DbLibrary", "2 DbLibrary", "{20C97C05-EEA0-4ACA-B77F-69CF0F21DB6F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8ACB14F4-313A-4B26-BC06-9CE86A345149}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8ACB14F4-313A-4B26-BC06-9CE86A345149}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8ACB14F4-313A-4B26-BC06-9CE86A345149}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8ACB14F4-313A-4B26-BC06-9CE86A345149}.Release|Any CPU.Build.0 = Release|Any CPU
+		{02FFAD62-634D-4727-A1FC-73D589AC6B4D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{02FFAD62-634D-4727-A1FC-73D589AC6B4D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{02FFAD62-634D-4727-A1FC-73D589AC6B4D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{02FFAD62-634D-4727-A1FC-73D589AC6B4D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{8ACB14F4-313A-4B26-BC06-9CE86A345149} = {BD04D8F2-5987-4DF4-9117-F3193F12830D}
+		{02FFAD62-634D-4727-A1FC-73D589AC6B4D} = {20C97C05-EEA0-4ACA-B77F-69CF0F21DB6F}
+	EndGlobalSection
+EndGlobal
