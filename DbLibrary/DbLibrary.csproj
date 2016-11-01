@@ -53,9 +53,13 @@
     <Compile Include="BaseStrategy.cs" />
     <Compile Include="Configurations\AddressComplexTypeConfiguration.cs" />
     <Compile Include="Configurations\CustomerEntityConfiguration.cs" />
+    <Compile Include="Configurations\OrderConfiguration.cs" />
     <Compile Include="Configurations\ProductCatalogConfiguration.cs" />
     <Compile Include="Customer.cs" />
+    <Compile Include="Order.cs" />
+    <Compile Include="OrderItem.cs" />
     <Compile Include="OrderSystemContext.cs" />
+    <Compile Include="Product.cs" />
     <Compile Include="ProductCatalog.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

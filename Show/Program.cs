@@ -14,7 +14,7 @@ namespace Show
             OrderSystemContext db = new OrderSystemContext();
 
             #region 1.查询测试
-            //var products = db.ProductCatalogs.ToList(); 
+            //var products = db.ProductCatalogs.ToList();
             #endregion
 
             #region 2.值对象测试
@@ -26,6 +26,32 @@ namespace Show
             //db.Customers.Add(newCustomer);
 
             //db.SaveChanges(); 
+            #endregion
+
+            #region 添加一对多映射
+            Order order = new Order();
+            order.CreatedDate = DateTime.Now;
+
+
+            order.Customer = db.Customers.FirstOrDefault(item => item.IDCardNumber == "rj");
+
+            OrderItem oi = new OrderItem();
+            oi.Order = order;
+            oi.Products = db.Products.ToList();
+
+            order.OrderItems = new List<OrderItem>() { oi };
+
+            db.Orders.Add(order);
+
+            try
+            {
+                int i = db.SaveChanges();
+
+            }
+            catch (Exception ex)
+            {
+
+            } 
             #endregion
 
             Console.ReadKey();

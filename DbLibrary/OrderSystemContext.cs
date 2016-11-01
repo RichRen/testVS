@@ -14,18 +14,22 @@ namespace DbLibrary
         public OrderSystemContext()
             : base("name=OrderSystemContext")
         {
+            Database.SetInitializer<OrderSystemContext>(null);
             //Database.SetInitializer<OrderSystemContext>(new CreateDatabaseIfNotExists<OrderSystemContext>());
-            Database.SetInitializer<OrderSystemContext>(new DropCreateOrderDatabaseWithSeedValueAlways());
+            //Database.SetInitializer<OrderSystemContext>(new DropCreateOrderDatabaseWithSeedValueAlways());
         }
 
         public DbSet<ProductCatalog> ProductCatalogs { get; set; }
         public DbSet<Customer> Customers { get; set; }
+        public DbSet<Product> Products { get; set; }
+        public DbSet<Order> Orders { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Configurations.Add(new ProductCatalogConfiguration());
             modelBuilder.Configurations.Add(new CustomerEntityConfiguration());
             modelBuilder.Configurations.Add(new AddressComplexTypeConfiguration());
+            modelBuilder.Configurations.Add(new OrderConfiguration());
 
             //值对象的类必须具备三个条件。
             //1.值对象类不能有主键。

@@ -19,6 +19,9 @@ namespace DbLibrary
             context.ProductCatalogs.Add(new ProductCatalog { CatalogName = "DELL E6400", Manufactory = "DELL", ListPrice = 5600, NetPrice = 4300 });
             context.ProductCatalogs.Add(new ProductCatalog { CatalogName = "DELL E6410", Manufactory = "DELL", ListPrice = 6500, NetPrice = 5100 });
             context.ProductCatalogs.Add(new ProductCatalog { CatalogName = "DELL E6420", Manufactory = "DELL", ListPrice = 7000, NetPrice = 5400 });
+
+            context.Products.Add(new Product { Catalog = new ProductCatalog { CatalogName = "DELL E6400", Manufactory = "DELL", ListPrice = 5600, NetPrice = 4300 }, CreateDate = DateTime.Parse("2010-1-20"), ExpireDate = DateTime.Parse("2013-1-20") });
+            context.Customers.Add(new Customer { IDCardNumber = "rj", CustomerName = "Alex", Gender = "M", PhoneNumber = "test", Address = new Address { Country = "China", Province = "Tianjin", City = "Tianjin", StreetAddress = "Crown Plaza", ZipCode = "300308" } });
         }
     }
 }
